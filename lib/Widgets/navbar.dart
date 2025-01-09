@@ -18,7 +18,7 @@ class _Navbar extends State<Navbar> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    const Homepage(),
+    Homepage(),
     Searchpage(),
     Postpage(),
     Notificationpage(),
