@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AsahKemampuan extends StatefulWidget {
   const AsahKemampuan({super.key});
@@ -10,8 +11,10 @@ class AsahKemampuan extends StatefulWidget {
 class _AsahKemampuanState extends State<AsahKemampuan> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('asah kemampuan'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Asah Kemampuan'),
+      ),
     );
   }
 }

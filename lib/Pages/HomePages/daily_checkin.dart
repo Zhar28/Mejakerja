@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class DailyCheckin extends StatefulWidget {
   const DailyCheckin({super.key});
@@ -10,8 +11,10 @@ class DailyCheckin extends StatefulWidget {
 class _DailyCheckinState extends State<DailyCheckin> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Daily Checkin'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('daily checkin'),
+      ),
     );
   }
 }

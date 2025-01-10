@@ -10,8 +10,10 @@ class YukKenalan extends StatefulWidget {
 class _YukKenalanState extends State<YukKenalan> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('yuk kenalan'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+      )
     );
   }
 }
