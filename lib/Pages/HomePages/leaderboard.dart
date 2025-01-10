@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Leaderboard extends StatefulWidget {
   const Leaderboard({super.key});
@@ -10,8 +11,10 @@ class Leaderboard extends StatefulWidget {
 class _LeaderboardState extends State<Leaderboard> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Leaderboard'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('leaderboard'),
+      ),
     );
   }
 }
