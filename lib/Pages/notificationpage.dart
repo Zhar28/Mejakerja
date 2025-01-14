@@ -14,7 +14,9 @@ class Notificationpage extends StatelessWidget {
     ];
 
     return Scaffold(
+      
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Notifications'),
       ),
       body: ListView.builder(
@@ -26,7 +28,6 @@ class Notificationpage extends StatelessWidget {
             leading: const Icon(Icons.notifications),
             title: Text(title),
             subtitle: Text(subtitle),
-            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
             onTap: () {
               // Add your onTap functionality here if needed
             },

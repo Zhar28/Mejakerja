@@ -12,9 +12,32 @@ class Homepage extends StatefulWidget {
 
   @override
   State<Homepage> createState() => _HomepageState();
-}
+}  
 
 class _HomepageState extends State<Homepage> {
+  final List<Map<String, String>> posts = [
+    {
+      'title': 'test 1',
+      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      'title': 'test 2',
+      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      'title': 'test 3',
+      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      'title': 'test 4',
+      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      'title': 'test 5',
+      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,117 +51,39 @@ class _HomepageState extends State<Homepage> {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(100, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => YukKenalan()));
-                    },
-                    child: const Text('Yuk Kenalan'),
+                  _buildButton(
+                    context,
+                    'Yuk Kenalan',
+                    YukKenalan(),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(100, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => AsahKemampuan()));
-                    },
-                    child: const Text('Asah Kemampuan'),
+                  _buildButton(
+                    context,
+                    'Asah Kemampuan',
+                    AsahKemampuan(),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(100, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => KembangkanPribadimu()));
-                    },
-                    child: const Text('Kembangkan Pribadimu'),
+                  _buildButton(
+                    context,
+                    'Kembangkan Pribadimu',
+                    KembangkanPribadimu(),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(100, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Leaderboard()));
-                    },
-                    child: const Text('Leaderboard'),
+                  _buildButton(
+                    context,
+                    'Leaderboard',
+                    Leaderboard(),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(100, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Profilepage()));
-                    },
-                    child: const Text('Intip Profilmu'),
+                  _buildButton(
+                    context,
+                    'Intip Profilmu',
+                    Profilepage(),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(100, 100),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => RewardMarketplace()));
-                    },
-                    child: const Text('Reward Marketplace'),
+                  _buildButton(
+                    context,
+                    'Reward Marketplace',
+                    RewardMarketplace(),
                   ),
                 ],
               ),
             ),
-            // Dummy post section with fixed height
-            const SizedBox(height: 20),
-            Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Container(
-                height: 180, // Fixed height for the post
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'Post Title',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      'This is a dummy post content                          ',
-                      style: TextStyle(fontSize: 14),
-                      overflow: TextOverflow.ellipsis, // In case content overflows
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      'Posted by: User Name',
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -150,9 +95,58 @@ class _HomepageState extends State<Homepage> {
               },
               child: const Text('Daily Checkin'),
             ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                itemCount: posts.length,
+                itemBuilder: (context, index) {
+                  final title = posts[index]['title'] ?? 'No Title';
+                  final content = posts[index]['content'] ?? 'No Content';
+                  return Card(
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
+                    elevation: 4.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: const TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            content,
+                            style: const TextStyle(fontSize: 14.0, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildButton(BuildContext context, String label, Widget page) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        minimumSize: const Size(100, 100),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+      },
+      child: Text(label),
     );
   }
 }
