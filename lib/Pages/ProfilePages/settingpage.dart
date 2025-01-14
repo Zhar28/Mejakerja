@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mejakerja/Pages/ProfilePages/profilepage.dart';
 import 'package:mejakerja/Pages/blocked_user.dart';
 import 'package:mejakerja/Pages/change_password.dart';
+import 'package:mejakerja/Pages/loginpage.dart';
+import 'package:mejakerja/Pages/subcompany.dart';
 
 class Settingpage extends StatefulWidget {
   const Settingpage({super.key});
@@ -48,7 +50,7 @@ class _SettingpageState extends State<Settingpage> {
                       children: [
                         const CircleAvatar(
                           radius: 45,
-                          backgroundImage: AssetImage('ton.jpeg'),
+                          backgroundImage: AssetImage('assets/monya.jpg'),
                         ),
                         const SizedBox(height: 16),
                         Padding(
@@ -103,7 +105,7 @@ class _SettingpageState extends State<Settingpage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ChangePasswordPage(),
+                        builder: (context) => const ChangePassword(),
                       ),
                     );
                   },
@@ -112,7 +114,8 @@ class _SettingpageState extends State<Settingpage> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     child: Row(
                       children: const [
                         Icon(Icons.key),
@@ -125,24 +128,33 @@ class _SettingpageState extends State<Settingpage> {
                     ),
                   ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                  child: Row(
-                    children: const [
-                      Icon(Icons.markunread_mailbox),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        'Change Sub Company',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SubcompanyPages(),
+                        ));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    child: Row(
+                      children: const [
+                        Icon(Icons.markunread_mailbox),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          'Change Sub Company',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 GestureDetector(
@@ -180,7 +192,7 @@ class _SettingpageState extends State<Settingpage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Profilepage(),
+                        builder: (context) => LoginPage(),
                       ),
                     );
                   },

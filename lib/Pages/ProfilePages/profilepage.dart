@@ -48,7 +48,7 @@ class Profilepage extends StatelessWidget {
                         children: [
                           const CircleAvatar(
                             radius: 45,
-                            backgroundImage: AssetImage('ton.jpeg'),
+                            backgroundImage: AssetImage('assets/monya.jpg'),
                           ),
                           const SizedBox(height: 16),
                           const Padding(
@@ -226,7 +226,7 @@ class Profilepage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ChangePasswordPage(),
+                          builder: (context) => const ChangePassword(),
                         ),
                       );
                     },
@@ -255,7 +255,7 @@ class Profilepage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ChangePasswordPage(),
+                          builder: (context) => const ChangePassword(),
                         ),
                       );
                     },
@@ -284,7 +284,7 @@ class Profilepage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ChangePasswordPage(),
+                          builder: (context) => const ChangePassword(),
                         ),
                       );
                     },
