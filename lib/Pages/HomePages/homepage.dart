@@ -6,35 +6,36 @@ import 'package:mejakerja/Pages/HomePages/leaderboard.dart';
 import 'package:mejakerja/Pages/HomePages/reward_marketplace.dart';
 import 'package:mejakerja/Pages/HomePages/yuk_kenalan.dart';
 import 'package:mejakerja/Pages/ProfilePages/profilepage.dart';
+import 'package:mejakerja/Pages/comment_page.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
   @override
   State<Homepage> createState() => _HomepageState();
-}  
+}
 
 class _HomepageState extends State<Homepage> {
   final List<Map<String, String>> posts = [
     {
-      'title': 'test 1',
-      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      'title': 'Flutter 3.0 Released!',
+      'content': 'Explore the new features in Flutter 3.0 and how it can improve your apps.'
     },
     {
-      'title': 'test 2',
-      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      'title': 'Dart Null Safety',
+      'content': 'Learn how to implement null safety in your Dart projects effectively.'
     },
     {
-      'title': 'test 3',
-      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      'title': 'State Management in Flutter',
+      'content': 'A comprehensive guide to managing state in your Flutter applications.'
     },
     {
-      'title': 'test 4',
-      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      'title': 'UI Design Tips',
+      'content': 'Enhance your app\'s user experience with these UI design tips.'
     },
     {
-      'title': 'test 5',
-      'content': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      'title': 'Performance Optimization',
+      'content': 'Techniques to optimize the performance of your Flutter applications.'
     },
   ];
 
@@ -84,6 +85,7 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -102,27 +104,40 @@ class _HomepageState extends State<Homepage> {
                 itemBuilder: (context, index) {
                   final title = posts[index]['title'] ?? 'No Title';
                   final content = posts[index]['content'] ?? 'No Content';
-                  return Card(
-                    margin: const EdgeInsets.symmetric(vertical: 8.0),
-                    elevation: 4.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            title,
-                            style: const TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CommentPage(
+                            title: title,
+                            content: content,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      margin: const EdgeInsets.symmetric(vertical: 8.0),
+                      elevation: 4.0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              title,
+                              style: const TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            content,
-                            style: const TextStyle(fontSize: 14.0, color: Colors.grey),
-                          ),
-                        ],
+                            const SizedBox(height: 8.0),
+                            Text(
+                              content,
+                              style: const TextStyle(fontSize: 14.0, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );
@@ -150,3 +165,4 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
+
