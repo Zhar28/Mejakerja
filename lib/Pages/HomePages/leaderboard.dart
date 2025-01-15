@@ -139,7 +139,7 @@ class Leaderboard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        'Mama Udah Acc Nih',
+                        'marcel',
                         style: TextStyle(color: Colors.white),
                       ),
                       Text(

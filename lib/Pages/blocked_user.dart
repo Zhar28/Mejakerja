@@ -44,7 +44,7 @@ class BlockedUserPage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Kapan ke Rumah',
+                    'lorem ipsum',
                     style: TextStyle(color: Colors.white),
                   ),
                   Text(
@@ -52,7 +52,7 @@ class BlockedUserPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   Text(
-                    'yopyoplua@gmail.com',
+                    'tes@gmail.com',
                     style: TextStyle(color: Colors.white),
                   ),
                 ],
@@ -68,7 +68,7 @@ class BlockedUserPage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Mama Udah Acc Nih',
+                    'test2',
                     style: TextStyle(color: Colors.white),
                   ),
                   Text(
@@ -76,7 +76,7 @@ class BlockedUserPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   Text(
-                    'berangberang@gmail.com',
+                    'test2@gmail.com',
                     style: TextStyle(color: Colors.white),
                   ),
                 ],
