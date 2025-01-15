@@ -46,7 +46,9 @@ class _HomepageState extends State<Homepage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
+            // Grid of Buttons
             Expanded(
+              flex: 1, // Giving more weight to the grid
               child: GridView.count(
                 crossAxisCount: 3,
                 crossAxisSpacing: 10,
@@ -85,7 +87,7 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            // Daily Checkin Button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -97,8 +99,9 @@ class _HomepageState extends State<Homepage> {
               },
               child: const Text('Daily Checkin'),
             ),
-            const SizedBox(height: 20),
-            Expanded(
+            const SizedBox(height: 10),
+            // Posts Section
+            Flexible(
               child: ListView.builder(
                 itemCount: posts.length,
                 itemBuilder: (context, index) {
@@ -165,4 +168,3 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
-
