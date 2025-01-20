@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:mejakerja/Pages/rewardmarketplace_2.dart';
+
 class RewardMarketplace extends StatefulWidget {
   const RewardMarketplace({super.key});
 
@@ -62,145 +64,167 @@ class _RewardMarketplaceState extends State<RewardMarketplace> {
                         children: [
                           Padding(
                             padding: EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 150,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
-                                          'assets/monya.jpg',
-                                          width: 90,
-                                          height: 90,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DetailMarketplace(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade300,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image.asset(
+                                            'assets/monya.jpg',
+                                            width: 90,
+                                            height: 90,
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(bottom: 42.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Monya Wife',
-                                              style: TextStyle(
-                                                color: Colors.blueAccent,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.local_play_sharp,
-                                                  color: Colors.yellow.shade700,
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              bottom: 42.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Monya Wife',
+                                                style: TextStyle(
+                                                  color: Colors.blueAccent,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
-                                                Text(
-                                                  '100000000 Point',
-                                                  style: TextStyle(
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.local_play_sharp,
                                                     color:
                                                         Colors.yellow.shade700,
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
+                                                  Text(
+                                                    '100000000 Point',
+                                                    style: TextStyle(
+                                                      color: Colors
+                                                          .yellow.shade700,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Divider(),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0),
-                                    child: Text(
-                                      'Tanggal pembelian maksimal: 11 November 2023',
-                                      style: TextStyle(fontSize: 12),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
+                                      ],
                                     ),
-                                  ),
-                                ],
+                                    Divider(),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: Text(
+                                        'Tanggal pembelian maksimal: 11 November 2023',
+                                        style: TextStyle(fontSize: 12),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                           Padding(
                             padding: EdgeInsets.all(12.0),
-                            child: Container(
-                              height: 150,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
-                                          'assets/monya.jpg',
-                                          width: 90,
-                                          height: 90,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DetailMarketplace(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade300,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image.asset(
+                                            'assets/monya.jpg',
+                                            width: 90,
+                                            height: 90,
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(bottom: 42.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Monya Wife',
-                                              style: TextStyle(
-                                                color: Colors.blueAccent,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.local_play_sharp,
-                                                  color: Colors.yellow.shade700,
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              bottom: 42.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Monya Wife',
+                                                style: TextStyle(
+                                                  color: Colors.blueAccent,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
-                                                Text(
-                                                  '100000000 Point',
-                                                  style: TextStyle(
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.local_play_sharp,
                                                     color:
                                                         Colors.yellow.shade700,
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
+                                                  Text(
+                                                    '100000000 Point',
+                                                    style: TextStyle(
+                                                      color: Colors
+                                                          .yellow.shade700,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Divider(),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0),
-                                    child: Text(
-                                      'Tanggal pembelian maksimal: 11 November 2023',
-                                      style: TextStyle(fontSize: 12),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
+                                      ],
                                     ),
-                                  ),
-                                ],
+                                    Divider(),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: Text(
+                                        'Tanggal pembelian maksimal: 11 November 2023',
+                                        style: TextStyle(fontSize: 12),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
