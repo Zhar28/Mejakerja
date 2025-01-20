@@ -1,10 +1,19 @@
-import 'package:flutter/material.dart';
-import 'package:mejakerja/Pages/ProfilePages/settingpage.dart';
+import 'dart:io';
 
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:mejakerja/Pages/ProfilePages/settingpage.dart';
 import 'package:mejakerja/Pages/change_password.dart';
 
-class Profilepage extends StatelessWidget {
+class Profilepage extends StatefulWidget {
   const Profilepage({super.key});
+
+  @override
+  State<Profilepage> createState() => _ProfilepageState();
+}
+
+class _ProfilepageState extends State<Profilepage> {
+  File? selectedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -38,17 +47,23 @@ class Profilepage extends StatelessWidget {
                       width: 380,
                       height: 400,
                       decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(16), // Rounded corners
+                        borderRadius: BorderRadius.circular(16),
                         border: Border.all(color: Colors.white, width: 4),
                         color: Colors.white,
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const CircleAvatar(
-                            radius: 45,
-                            backgroundImage: AssetImage('assets/monya.jpg'),
+                          GestureDetector(
+                            onTap: () async {
+                              await _pickImageFromGallery();
+                            },
+                            child: CircleAvatar(
+                              radius: 45,
+                              backgroundImage: selectedImage != null
+                                  ? FileImage(selectedImage!) as ImageProvider
+                                  : const AssetImage('assets/monya.jpg'),
+                            ),
                           ),
                           const SizedBox(height: 16),
                           const Padding(
@@ -314,5 +329,17 @@ class Profilepage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _pickImageFromGallery() async {
+    final returnedImage =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    // If no image is selected, exit the function
+    if (returnedImage == null) return;
+
+    setState(() {
+      selectedImage = File(returnedImage.path);
+    });
   }
 }
